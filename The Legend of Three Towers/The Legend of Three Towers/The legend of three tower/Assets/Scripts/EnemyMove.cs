@@ -22,16 +22,18 @@ public class EnemyMove : MonoBehaviour {
 		{
 			//Destroy(gameObject);
 			ObjectPool.instance.PoolObject(this.gameObject);
+			GameManager.instance.setHP(-1);	// Le quito 1 de HP por cada vez q llego a las torres....
 		}
 
 	}
 
 	void Update () {
-
-		transform.position -= moveSpeed;
-		counter += Time.deltaTime;
-		if (counter >= MaxAliveTime) {
-			ObjectPool.instance.PoolObject(this.gameObject);
+		if (GameManager._gameState == GameManager.State.STARTED) {
+			transform.position -= moveSpeed;
+			counter += Time.deltaTime;
+			if (counter >= MaxAliveTime) {
+				ObjectPool.instance.PoolObject (this.gameObject);
+			}
 		}
 	}
 }

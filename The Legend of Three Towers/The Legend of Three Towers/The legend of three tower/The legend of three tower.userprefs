@@ -1,10 +1,20 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyMove.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameManager.cs" Line="39" Column="27" />
-      <File FileName="Assets\Scripts\AttackArrow.cs" Line="25" Column="67" />
-      <File FileName="Assets\Scripts\EnemyMove.cs" Line="11" Column="30" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="110" Column="38" />
+      <File FileName="Assets/Scripts/AttackArrow.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/EnemyManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LevelIndexer.cs" Line="31" Column="25" />
+      <File FileName="Assets/Scripts/Role.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CharacterController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/EnemyMove.cs" Line="27" Column="3" />
+      <File FileName="Assets/Scripts/Exit.cs" Line="1" Column="1" />
+      <File FileName="Assets/DataSpawner.cs" Line="7" Column="12" />
+      <File FileName="Assets/Scripts/ChangeScene.cs" Line="14" Column="29" />
+      <File FileName="Assets/LevelButtonBehaviour.cs" Line="17" Column="37" />
+      <File FileName="Assets/Scripts/ToggleConfig.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -25,6 +25,7 @@ public class AttackArrow : MonoBehaviour {
 			GameManager.addScore(col.GetComponent<EnemyMove>().scoreOnDie);
 			ObjectPool.instance.PoolObject (col.gameObject);
 			ObjectPool.instance.PoolObject (this.gameObject);
+			GameManager.instance.mobPlusPlus();
 		}
 
 	}

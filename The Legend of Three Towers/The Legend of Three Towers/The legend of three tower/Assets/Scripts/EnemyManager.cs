@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class EnemyManager : MonoBehaviour {
+	public static EnemyManager instance = null;
 	public Transform[] spawnPoints;
 	public GameObject[] enemiesPrefabs;
 	
@@ -10,7 +11,15 @@ public class EnemyManager : MonoBehaviour {
 
 	private int minSpawn  = 1;
 	public bool canSpawn0 = false;
+
+
+	public int EnemiesPerLevel = 5;
+
 	// Use this for initialization
+	void Awake(){
+		instance = this;	// Singleton... Why So Serious?!
+	}
+
 	void Start () {
 		timer = timeInterval;
 
@@ -18,18 +27,31 @@ public class EnemyManager : MonoBehaviour {
 			minSpawn = 0;
 		else
 			minSpawn = 1;
+
+		if (!LevelIndexer.instance) {
+			enabled = false;
+			Debug.Log("We have not LevelIndexer");
+		}
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		timer += Time.deltaTime;
+		if(GameManager._gameState == GameManager.State.STARTED)
+			timer += Time.deltaTime;
+
 		if (timer >= timeInterval) {
 			timer = 0;
 			SpawnEnemies();
 		}
+
 	}
 
+
 	void SpawnEnemies(){
+
+		// We should check if we can spawn more than 1... But, anyways... Don't affect to our game at all.. GL HF.
+
 		int Q = Random.Range (minSpawn, 4);
 		switch (Q) {
 			case 0:
@@ -38,7 +60,7 @@ public class EnemyManager : MonoBehaviour {
 			Vector3 sPos = spawnPoints[getPosition()].position;
 			GameObject go = ObjectPool.instance.GetObjectForType(enemiesPrefabs[Random.Range(0,enemiesPrefabs.Length)].name);
 			go.transform.position = sPos;
-				break;
+			break;
 
 			case 2:
 			int s1 = getPosition();
@@ -51,7 +73,6 @@ public class EnemyManager : MonoBehaviour {
 			pos = spawnPoints[s2].position;
 			go1 = ObjectPool.instance.GetObjectForType(enemiesPrefabs[Random.Range(0,enemiesPrefabs.Length)].name);
 			go1.transform.position = pos;
-
 			break;
 
 			case 3:
