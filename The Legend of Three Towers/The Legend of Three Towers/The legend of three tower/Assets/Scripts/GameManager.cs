@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour {
 	private int mobToLvlUp = 0;
 	private int currentMob = 0;
 
-	public  int SpawnPerLevel = 5;
+	public  int SpawnPerLevel = 20;
 
 	public int HP = 10;
 	private int currentHP;

@@ -5,7 +5,12 @@ public class ChangeScene : MonoBehaviour {
 	public GameObject Shop = null;
 	public GameObject Config = null;
 	public GameObject SelectLevel = null;
+	public GameObject Paused = null;
 
+	public void Menu()
+	{
+		Application.LoadLevel ("Menu");
+	}
 	public void StartGame()
 	{
 		Application.LoadLevel("Main");
@@ -26,6 +31,13 @@ public class ChangeScene : MonoBehaviour {
 	{
 		if (Config)
 			Config.SetActive (!Config.activeSelf);
+	}
+	public void togglePaused()
+	{
+		if (Paused)
+			Paused.SetActive (!Paused.activeSelf);
+			Time.timeScale = 0;
+			
 	}
 	public void toggleSelectLevel(){
 		if (SelectLevel)

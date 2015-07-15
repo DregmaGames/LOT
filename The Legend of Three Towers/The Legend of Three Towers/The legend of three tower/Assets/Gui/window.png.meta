@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: d3829e1271068bf41a710b6c09431ec7
-timeCreated: 1434062490
+timeCreated: 1436967698
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -14,6 +14,7 @@ TextureImporter:
     21300014: window_55
     21300016: window_58
     21300018: window_0
+    21300020: window_2
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -156,6 +157,16 @@ TextureImporter:
         y: 4305
         width: 1166
         height: 805
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: window_2
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 6393
+        width: 557
+        height: 671
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
