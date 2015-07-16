@@ -5,10 +5,16 @@ using System.Collections.Generic;
 public class CharacterController : MonoBehaviour {
 	public GameObject ArrowPrefab;
 	public AudioSource clip;
+
+	public float timer = 0f;
+	public float cooldownTime = 1f;
+
 	void Start(){
 	}
 
 	void Update(){
+
+		timer += Time.deltaTime;
 	
 		if (GameManager._gameState == GameManager.State.STARTED && Input.GetMouseButtonDown(0)) {
 
@@ -16,9 +22,13 @@ public class CharacterController : MonoBehaviour {
 			if(hit && hit.collider.gameObject.tag.Equals("SpawnPoint"))	
 					transform.position = hit.transform.position;
 			else {
-				GameObject go = ObjectPool.instance.GetObjectForType("arrow");
-				go.transform.position = this.transform.position;
-				clip.Play();
+				if (timer>cooldownTime)
+				{
+					GameObject go = ObjectPool.instance.GetObjectForType("arrow");
+					go.transform.position = this.transform.position;
+					clip.Play();
+					timer = 0;
+				}
 			}
 			
 		}

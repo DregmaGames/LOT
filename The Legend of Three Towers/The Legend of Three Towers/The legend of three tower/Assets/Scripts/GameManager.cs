@@ -41,8 +41,8 @@ public class GameManager : MonoBehaviour {
 		instance = this;
 
 		if (LevelIndexer.instance == null) {
-			Debug.Log("No hay LevelIndexer");
-			Application.LoadLevel(1);	// Mando al menu, xq soy re jodido.
+
+			Application.LoadLevel(1);	// Mando al menu
 			return;
 		}
 

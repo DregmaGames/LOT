@@ -1,20 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-<<<<<<< Updated upstream
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\Sea War\Sea War\game\Assets\Scripts\Audio.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\EnemyMove.cs">
     <Files>
-      <File FileName="..\..\..\..\Sea War\Sea War\game\Assets\Scripts\InicioGUI.cs" Line="113" Column="93" />
-      <File FileName="..\..\..\..\Sea War\Sea War\game\Assets\Scripts\Audio.cs" Line="14" Column="1" />
-=======
-  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../../Downloads/Star Trek - Disaster Recovery/Star Trek - Disaster Recovery/Assets/Scripts/Ship.cs">
-    <Files>
-      <File FileName="../../../../../Downloads/Star Trek - Disaster Recovery/Star Trek - Disaster Recovery/Assets/Scripts/Ship.cs" Line="83" Column="6" />
-      <File FileName="../../../../../Downloads/Star Trek - Disaster Recovery/Star Trek - Disaster Recovery/Assets/Scripts/PlayerController.cs" Line="65" Column="30" />
-      <File FileName="../../../../../Downloads/Star Trek - Disaster Recovery/Star Trek - Disaster Recovery/Assets/Scripts/Weapons.cs" Line="97" Column="4" />
-      <File FileName="../../../../../Downloads/Star Trek - Disaster Recovery/Star Trek - Disaster Recovery/Assets/Scripts/PlayerShip.cs" Line="7" Column="28" />
-      <File FileName="../../../../../Downloads/Star Trek - Disaster Recovery/Star Trek - Disaster Recovery/Assets/Scripts/Managers/GameManager.cs" Line="30" Column="19" />
-      <File FileName="../../../../../Downloads/Star Trek - Disaster Recovery/Star Trek - Disaster Recovery/Assets/Scripts/Menu/MenuCameraController.cs" Line="7" Column="22" />
->>>>>>> Stashed changes
+      <File FileName="Assets\Scripts\EnemyMove.cs" Line="23" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
