@@ -32,11 +32,22 @@ public class ChangeScene : MonoBehaviour {
 		if (Config)
 			Config.SetActive (!Config.activeSelf);
 	}
-	public void togglePaused()
+	public void setPause(bool p)
 	{
-		if (Paused)
-			Paused.SetActive (!Paused.activeSelf);
-			Time.timeScale = 0;
+		
+		if(GameManager._gameState != GameManager.State.ENDED){
+			if(p){
+				Paused.SetActive(true);
+				Time.timeScale = 0;
+				if(GameManager._gameState == GameManager.State.STARTED)
+					GameManager._gameState = GameManager.State.PAUSED;
+			}else{
+				Paused.SetActive(false);
+				Time.timeScale = 1;
+				if(GameManager._gameState == GameManager.State.PAUSED)
+					GameManager._gameState = GameManager.State.STARTED;
+			}
+		}
 			
 	}
 	public void toggleTutorial()
@@ -61,6 +72,16 @@ public class ChangeScene : MonoBehaviour {
 			LevelIndexer.instance.currentLevel = l;
 			StartGame();
 		}
+	}
+	
+	public void shareOnSocial(){
+		#if UNITY_ANDROID
+		if(Application.isMobilePlatform){
+			AndroidJavaClass plugin = new AndroidJavaClass("com.dregmaGames.plugin.SharePlugin");
+			plugin.CallStatic("shareText", "The Legend of Three Towers" , "Acabo de superar el nivel " + LevelIndexer.instance.currentLevel.ToString());
+		}
+		#endif
+		Debug.Log ("Share Sent!");
 	}
 
 }

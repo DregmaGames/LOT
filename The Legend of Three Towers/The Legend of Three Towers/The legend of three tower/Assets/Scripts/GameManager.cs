@@ -5,6 +5,7 @@ using System.Collections;
 public class GameManager : MonoBehaviour {
 	public static GameManager instance = null;
 	public static State 	  _gameState = State.STARTED;
+	public ChangeScene tools = null;
 	private int score = 0;
 
 	private int mobToLvlUp = 0;
@@ -34,12 +35,6 @@ public class GameManager : MonoBehaviour {
 		_gameState = State.STARTED;
 
 		currentHP = HP;
-
-		#if UNITY_ANDROID
-			if (Application.isMobilePlatform) {
-				callPlugin();
-			}
-		#endif
 	}
 
 	void Awake(){
@@ -78,8 +73,9 @@ public class GameManager : MonoBehaviour {
 			}
 
 			if (Input.GetKeyDown(KeyCode.Escape)){
-				Application.LoadLevel(1);
+				tools.setPause(true);
 			}
+
 		}
 	}
 
@@ -145,14 +141,6 @@ public class GameManager : MonoBehaviour {
 		_gameState = s;
 	}
 	// -------------------------------------
-	void callPlugin(){
-	#if UNITY_ANDROID
-		if(Application.isMobilePlatform)
-			using (AndroidJavaClass ajc = new AndroidJavaClass("com.dregmagames.plugin.Main")) {
-				ajc.CallStatic("Test");
-			}
-	#endif
-	}
 
 	#if UNITY_ANDROID
 		void callFromThePlugin(string s){
