@@ -16,7 +16,7 @@ public class CharacterController : MonoBehaviour {
 
 		timer += Time.deltaTime;
 	
-		if (GameManager._gameState == GameManager.State.STARTED && Input.GetMouseButtonDown(0)) {
+		if (GameManager.Game_State == GameManager.State.STARTED && Input.GetMouseButtonDown(0)) {
 
 			RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 			if(hit && hit.collider.gameObject.tag.Equals("SpawnPoint"))	

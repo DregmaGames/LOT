@@ -15,9 +15,9 @@ public class EnemyManager : MonoBehaviour {
 
 	public int EnemiesPerLevel = 5;
 
-	// Use this for initialization
+
 	void Awake(){
-		instance = this;	// Singleton... Why So Serious?!
+		instance = this;	
 	}
 
 	void Start () {
@@ -30,14 +30,15 @@ public class EnemyManager : MonoBehaviour {
 
 		if (!LevelIndexer.instance) {
 			enabled = false;
-			Debug.Log("We have not LevelIndexer");
+
 		}
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if(GameManager._gameState == GameManager.State.STARTED)
+		//spawneo enemigos
+		if(GameManager.Game_State == GameManager.State.STARTED)
 			timer += Time.deltaTime;
 
 		if (timer >= timeInterval) {
@@ -50,7 +51,7 @@ public class EnemyManager : MonoBehaviour {
 
 	void SpawnEnemies(){
 
-		// We should check if we can spawn more than 1... But, anyways... Don't affect to our game at all.. GL HF.
+		// el spawneo random de los enemigos
 
 		int Q = Random.Range (minSpawn, 4);
 		switch (Q) {

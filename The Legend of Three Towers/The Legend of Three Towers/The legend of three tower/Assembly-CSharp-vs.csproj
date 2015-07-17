@@ -61,14 +61,11 @@
      <Compile Include="Assets\Scripts\Exit.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\LevelIndexer.cs" />
-     <Compile Include="Assets\Scripts\LevelManager.cs" />
      <Compile Include="Assets\Scripts\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\Role.cs" />
-     <Compile Include="Assets\Scripts\Score.cs" />
      <Compile Include="Assets\Scripts\Shop_Button.cs" />
      <Compile Include="Assets\Scripts\Singleton.cs" />
      <Compile Include="Assets\Scripts\SplashScript.cs" />
-     <Compile Include="Assets\Scripts\Stats.cs" />
      <Compile Include="Assets\Scripts\ToggleConfig.cs" />
      <Compile Include="Assets\Scripts\UiResizer.cs" />
      <Compile Include="Assets\SpawnPoint.cs" />

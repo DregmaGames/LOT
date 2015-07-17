@@ -4,7 +4,7 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour {
 	public static GameManager instance = null;
-	public static State 	  _gameState = State.STARTED;
+	public static State Game_State = State.STARTED;
 	public ChangeScene tools = null;
 	private int score = 0;
 
@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour {
 	public GameObject resultScreen = null;
 	public Text		  messageText = null;
 
+	//Estados del juego
 	public enum State {
 		PAUSED,
 		STARTED,
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_gameState = State.STARTED;
+		Game_State = State.STARTED;
 
 		currentHP = HP;
 	}
@@ -63,7 +64,7 @@ public class GameManager : MonoBehaviour {
 
 		UpdateGraphics ();
 
-		if (_gameState != State.ENDED) {
+		if (Game_State != State.ENDED) {
 			if ( weWin() ) {
 				OnWinCondition ();
 			}
@@ -92,7 +93,7 @@ public class GameManager : MonoBehaviour {
 
 	// -------------------------------------
 	bool weWin(){
-		if (_gameState == State.STARTED) {
+		if (Game_State == State.STARTED) {
 			return currentMob >= mobToLvlUp;
 		}
 
@@ -100,11 +101,11 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void OnWinCondition(){
-		if (_gameState == State.STARTED) {
+		if (Game_State == State.STARTED) {
 			Time.timeScale = 0;
 			if( LevelIndexer.instance.level == LevelIndexer.instance.currentLevel)
 				LevelIndexer.instance.level += 1;
-			_gameState = State.ENDED;
+			Game_State = State.ENDED;
 
 			messageText.text = "You Win!";
 			resultScreen.SetActive(true);
@@ -114,7 +115,7 @@ public class GameManager : MonoBehaviour {
 	// -------------------------------------
 	bool weLose(){
 
-		if (_gameState == State.STARTED) {
+		if (Game_State == State.STARTED) {
 			return currentHP <= 0;
 		}
 
@@ -122,10 +123,10 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void OnLoseCondition(){
-		if (_gameState == State.STARTED) {
+		if (Game_State == State.STARTED) {
 			Debug.Log("YOU LOSE");
 			Time.timeScale = 0;
-			_gameState = State.ENDED;
+			Game_State = State.ENDED;
 
 			messageText.text = "You Lose!";
 			resultScreen.SetActive(true);
@@ -138,7 +139,7 @@ public class GameManager : MonoBehaviour {
 	}
 	// -------------------------------------
 	public static void setState(State s){
-		_gameState = s;
+		Game_State = s;
 	}
 	// -------------------------------------
 

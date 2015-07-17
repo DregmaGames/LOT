@@ -6,22 +6,22 @@ public class ToggleConfig : MonoBehaviour {
 
 		public Sprite Inactive = null;
 		
-		private Toggle _Toggle = null;
-		private Image _Background = null;
-		private Sprite _BackgroundActive = null;
+		private Toggle Togglee = null;
+		private Image Background_img = null;
+		private Sprite BackgroundActive_spr = null;
 		
 		void Awake()
 		{
-			_Toggle = GetComponent<Toggle>();
-			_Background = transform.GetComponentInChildren<Image>();
-			_BackgroundActive = _Background.sprite;
+			Togglee = GetComponent<Toggle>();
+			Background_img = transform.GetComponentInChildren<Image>();
+			BackgroundActive_spr = Background_img.sprite;
 		}
 		
 		public void Toggle()
 		{
-			if (_Toggle.isOn)
-				_Background.sprite = _BackgroundActive;
+			if (Togglee.isOn)
+				Background_img.sprite = BackgroundActive_spr;
 			else
-				_Background.sprite = Inactive;
+				Background_img.sprite = Inactive;
 		}
 }

@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class LevelIndexer : MonoBehaviour {
-	//public string era;
+
 	public int level = 1;	// Default level... 1 :)
 	public int currentLevel = 1;
 	public static LevelIndexer instance = null;

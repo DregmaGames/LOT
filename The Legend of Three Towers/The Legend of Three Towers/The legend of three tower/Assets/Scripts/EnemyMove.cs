@@ -28,7 +28,7 @@ public class EnemyMove : MonoBehaviour {
 	}
 
 	void Update () {
-		if (GameManager._gameState == GameManager.State.STARTED) {
+		if (GameManager.Game_State == GameManager.State.STARTED) {
 			transform.position -= moveSpeed;
 			counter += Time.deltaTime;
 			if (counter >= MaxAliveTime) {

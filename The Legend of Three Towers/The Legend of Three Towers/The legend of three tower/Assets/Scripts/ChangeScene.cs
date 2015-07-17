@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 public class ChangeScene : MonoBehaviour {
@@ -35,17 +35,17 @@ public class ChangeScene : MonoBehaviour {
 	public void setPause(bool p)
 	{
 		
-		if(GameManager._gameState != GameManager.State.ENDED){
+		if(GameManager.Game_State != GameManager.State.ENDED){
 			if(p){
 				Paused.SetActive(true);
 				Time.timeScale = 0;
-				if(GameManager._gameState == GameManager.State.STARTED)
-					GameManager._gameState = GameManager.State.PAUSED;
+				if(GameManager.Game_State == GameManager.State.STARTED)
+					GameManager.Game_State = GameManager.State.PAUSED;
 			}else{
 				Paused.SetActive(false);
 				Time.timeScale = 1;
-				if(GameManager._gameState == GameManager.State.PAUSED)
-					GameManager._gameState = GameManager.State.STARTED;
+				if(GameManager.Game_State == GameManager.State.PAUSED)
+					GameManager.Game_State = GameManager.State.STARTED;
 			}
 		}
 			
@@ -81,7 +81,7 @@ public class ChangeScene : MonoBehaviour {
 			plugin.CallStatic("shareText", "The Legend of Three Towers" , "Acabo de superar el nivel " + LevelIndexer.instance.currentLevel.ToString());
 		}
 		#endif
-		Debug.Log ("Share Sent!");
+		Debug.Log ("Se compartio!");
 	}
 
 }
